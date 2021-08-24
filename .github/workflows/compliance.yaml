@@ -1,0 +1,51 @@
+name: Compliance Rules Checks
+
+on:
+  push
+
+jobs:
+  check_docker_rules_benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Auditd and Docker compliance
+        run: ./testdata/setup_compliance.sh
+
+      - name: Checkout bench
+        uses: actions/checkout@v2
+        with:
+          repository: docker/docker-bench-security
+          path: bench
+
+      - name: Run benchmark
+        working-directory: bench
+        run: |
+          sudo -E ./docker-bench-security.sh
+
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+
+  check_docker_rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Auditd and Docker compliance
+        run: ./testdata/setup_compliance.sh
+      
+      - name: Setup Datadog Agent
+        env:
+          DD_API_KEY: faketemp
+          DD_AGENT_MAJOR_VERSION: 7
+          DD_SITE: datadoghq.com
+          REPO_URL: datad0g.com
+        run: |
+          bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+
+      - name: Run checks
+        run: |
+          sudo /opt/datadog-agent/embedded/bin/security-agent check --file ${{ github.workspace }}/compliance/containers/cis-docker-1.2.0.yaml
