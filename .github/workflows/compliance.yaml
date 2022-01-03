@@ -9,9 +9,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - policy_tag: v0.17
+          - test_name: legacy
+            policy_tag: v0.17
             dist_channel: stable
-          - policy_tag: v0.18.6
+          - test_name: rego
+            policy_tag: v0.18.6
             dist_channel: beta
     steps:
       - name: Checkout current code
@@ -39,4 +41,10 @@ jobs:
 
       - name: Run checks
         run: |
-          sudo /opt/datadog-agent/embedded/bin/security-agent compliance check --file ${{ github.workspace }}/tests/compliance/containers/cis-docker-1.2.0.yaml
+          sudo /opt/datadog-agent/embedded/bin/security-agent compliance check --file ${{ github.workspace }}/tests/compliance/containers/cis-docker-1.2.0.yaml > results.txt
+
+      - name: Upload results
+        uses: actions/upload-artifact@v2
+        with:
+            name: docker-benchmark-results-${{ matrix.test_name }}
+            path: results.txt
