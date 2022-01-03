@@ -27,10 +27,15 @@ jobs:
   check_docker_rules:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout current code
+        uses: actions/checkout@v2
+
+      - name: Checkout test code
         uses: actions/checkout@v2
         with:
+          repository: DataDog/security-agent-policies
           ref: v0.17
+          path: tests
 
       - name: Setup Auditd and Docker compliance
         run: ./testdata/setup_compliance.sh
@@ -46,4 +51,4 @@ jobs:
 
       - name: Run checks
         run: |
-          sudo /opt/datadog-agent/embedded/bin/security-agent compliance check --file ${{ github.workspace }}/compliance/containers/cis-docker-1.2.0.yaml
+          sudo /opt/datadog-agent/embedded/bin/security-agent compliance check --file ${{ github.workspace }}/tests/compliance/containers/cis-docker-1.2.0.yaml
