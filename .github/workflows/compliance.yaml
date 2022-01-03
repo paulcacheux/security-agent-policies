@@ -24,15 +24,13 @@ jobs:
         run: |
           sudo -E ./docker-bench-security.sh
 
-      - name: Setup tmate session
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
-
   check_docker_rules:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: v0.17
 
       - name: Setup Auditd and Docker compliance
         run: ./testdata/setup_compliance.sh
