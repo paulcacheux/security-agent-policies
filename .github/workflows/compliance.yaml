@@ -48,4 +48,4 @@ jobs:
 
       - name: Run checks
         run: |
-          sudo /opt/datadog-agent/embedded/bin/security-agent check --file ${{ github.workspace }}/compliance/containers/cis-docker-1.2.0.yaml
+          sudo /opt/datadog-agent/embedded/bin/security-agent compliance check --file ${{ github.workspace }}/compliance/containers/cis-docker-1.2.0.yaml
