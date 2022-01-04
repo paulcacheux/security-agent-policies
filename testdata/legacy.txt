@@ -1,0 +1,984 @@
+INFO | Features detected from environment: docker,containerd
+WARN | DEPRECATION NOTICE: The agent resolved your hostname as 'fv-az183-229'. However in a future version, it will be resolved as 'fv-az183-229.aixeropmy22uphdfpsuanqabdh.cx.internal.cloudapp.net' by default. To enable the future behavior, please enable the `hostname_fqdn` flag in the configuration. For more information: https://dtdg.co/flag-hostname-fqdn
+INFO | Host root filesystem will be remapped to 
+INFO | Loading compliance rules from /home/runner/work/security-agent-policies/security-agent-policies/tests/compliance/containers/cis-docker-1.2.0.yaml
+INFO | CIS Docker Generic/1.2.0: loading suite from /home/runner/work/security-agent-policies/security-agent-policies/tests/compliance/containers/cis-docker-1.2.0.yaml
+INFO | cis-docker-1.2.0-1.2.1: Running check: cis-docker-1.2.0-1.2.1: [CIS Docker] Ensure a separate partition for containers has been created [version=1.2.0]
+WARN | Unable to return original path for: /proc/mounts
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/proc/mounts",
+    "file.group": "root",
+    "file.path": "/proc/mounts",
+    "file.permissions": 292,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-1.2.2: Running check: cis-docker-1.2.0-1.2.2: [CIS Docker] Ensure only trusted users are allowed to control Docker daemon [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.2",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "group.id": 121,
+    "group.name": "docker",
+    "group.users": [
+      ""
+    ]
+  }
+}
+INFO | cis-docker-1.2.0-1.2.3: Running check: cis-docker-1.2.0-1.2.3: [CIS Docker] Ensure auditing is configured for the Docker daemon [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.3",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "audit.enabled": true,
+    "audit.path": "/usr/bin/dockerd",
+    "audit.permissions": "wa"
+  }
+}
+INFO | cis-docker-1.2.0-1.2.4: Running check: cis-docker-1.2.0-1.2.4: [CIS Docker] Ensure auditing is configured for Docker files and directories - /var/lib/docker [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.4",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "audit.enabled": true,
+    "audit.path": "/var/lib/docker",
+    "audit.permissions": "wa"
+  }
+}
+INFO | cis-docker-1.2.0-1.2.5: Running check: cis-docker-1.2.0-1.2.5: [CIS Docker] Ensure auditing is configured for Docker files and directories - /etc/docker [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.5",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "audit.enabled": true,
+    "audit.path": "/etc/docker",
+    "audit.permissions": "wa"
+  }
+}
+INFO | cis-docker-1.2.0-1.2.6: Running check: cis-docker-1.2.0-1.2.6: [CIS Docker] Ensure auditing is configured for Docker files and directories - docker.service [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.6",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-1.2.7: Running check: cis-docker-1.2.0-1.2.7: [CIS Docker] Ensure auditing is configured for Docker files and directories - docker.socket [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.7",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-1.2.8: Running check: cis-docker-1.2.0-1.2.8: [CIS Docker] Ensure auditing is configured for Docker files and directories - /etc/default/docker [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.8",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "cis-docker-1.2.0-1.2.8: audit resource path does not exist"
+  }
+}
+ERROR | cis-docker-1.2.0-1.2.8: Check failed: cis-docker-1.2.0-1.2.8: audit resource path does not exist
+INFO | cis-docker-1.2.0-1.2.9: Running check: cis-docker-1.2.0-1.2.9: [CIS Docker] Ensure auditing is configured for Docker files and directories - /etc/sysconfig/docker [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.9",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "cis-docker-1.2.0-1.2.9: audit resource path does not exist"
+  }
+}
+ERROR | cis-docker-1.2.0-1.2.9: Check failed: cis-docker-1.2.0-1.2.9: audit resource path does not exist
+INFO | cis-docker-1.2.0-1.2.10: Running check: cis-docker-1.2.0-1.2.10: [CIS Docker] Ensure auditing is configured for Docker files and directories - /etc/docker/daemon.json [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.10",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "audit.enabled": true,
+    "audit.path": "/etc/docker/daemon.json",
+    "audit.permissions": "wa"
+  }
+}
+INFO | cis-docker-1.2.0-1.2.11: Running check: cis-docker-1.2.0-1.2.11: [CIS Docker] Ensure auditing is configured for Docker files and directories - /usr/bin/containerd [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.11",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "audit.enabled": true,
+    "audit.path": "/usr/bin/containerd",
+    "audit.permissions": "wa"
+  }
+}
+INFO | cis-docker-1.2.0-1.2.12: Running check: cis-docker-1.2.0-1.2.12: [CIS Docker] Ensure auditing is configured for Docker files and directories - /usr/sbin/runc [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-1.2.12",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "cis-docker-1.2.0-1.2.12: audit resource path does not exist"
+  }
+}
+ERROR | cis-docker-1.2.0-1.2.12: Check failed: cis-docker-1.2.0-1.2.12: audit resource path does not exist
+INFO | cis-docker-1.2.0-2.1: Running check: cis-docker-1.2.0-2.1: [CIS Docker] Ensure network traffic is restricted between containers on the default bridge [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_network",
+  "resource_id": "fv-az183-229_3f5cb3f6beb459b7b205568b234e9d5dde481b1c973f5bb18cb2184fea652357",
+  "tags": null,
+  "data": {
+    "network.name": "none"
+  }
+}
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_network",
+  "resource_id": "fv-az183-229_2957a0d24f0a3803557300c835c82a2ae1d319ad1b6f0de196c2da796bbf905b",
+  "tags": null,
+  "data": {
+    "network.name": "host"
+  }
+}
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_network",
+  "resource_id": "fv-az183-229_c235ccf5be4a4ae6fd517c15933225484728f4c2fbeca8e5ae5e208aa133279f",
+  "tags": null,
+  "data": {
+    "network.name": "bridge"
+  }
+}
+INFO | cis-docker-1.2.0-2.2: Running check: cis-docker-1.2.0-2.2: [CIS Docker] Ensure the logging level is set to 'info' [version=1.2.0]
+1641232656530967360 [Debug] Unable to access /proc/2/exe: readlink /proc/2/exe: no such file or directory
+1641232656531198481 [Debug] Unable to access /proc/3/exe: readlink /proc/3/exe: no such file or directory
+1641232656531405100 [Debug] Unable to access /proc/4/exe: readlink /proc/4/exe: no such file or directory
+1641232656531641622 [Debug] Unable to access /proc/5/exe: readlink /proc/5/exe: no such file or directory
+1641232656531869442 [Debug] Unable to access /proc/6/exe: readlink /proc/6/exe: no such file or directory
+1641232656532074461 [Debug] Unable to access /proc/7/exe: readlink /proc/7/exe: no such file or directory
+1641232656532293281 [Debug] Unable to access /proc/8/exe: readlink /proc/8/exe: no such file or directory
+1641232656532526602 [Debug] Unable to access /proc/9/exe: readlink /proc/9/exe: no such file or directory
+1641232656532753523 [Debug] Unable to access /proc/10/exe: readlink /proc/10/exe: no such file or directory
+1641232656532974443 [Debug] Unable to access /proc/11/exe: readlink /proc/11/exe: no such file or directory
+1641232656533185762 [Debug] Unable to access /proc/12/exe: readlink /proc/12/exe: no such file or directory
+1641232656533639104 [Debug] Unable to access /proc/13/exe: readlink /proc/13/exe: no such file or directory
+1641232656533870525 [Debug] Unable to access /proc/14/exe: readlink /proc/14/exe: no such file or directory
+1641232656534005737 [Debug] Unable to access /proc/15/exe: readlink /proc/15/exe: no such file or directory
+1641232656534141350 [Debug] Unable to access /proc/16/exe: readlink /proc/16/exe: no such file or directory
+1641232656534272862 [Debug] Unable to access /proc/17/exe: readlink /proc/17/exe: no such file or directory
+1641232656534418075 [Debug] Unable to access /proc/18/exe: readlink /proc/18/exe: no such file or directory
+1641232656534555387 [Debug] Unable to access /proc/20/exe: readlink /proc/20/exe: no such file or directory
+1641232656534702501 [Debug] Unable to access /proc/21/exe: readlink /proc/21/exe: no such file or directory
+1641232656534851414 [Debug] Unable to access /proc/22/exe: readlink /proc/22/exe: no such file or directory
+1641232656534998928 [Debug] Unable to access /proc/23/exe: readlink /proc/23/exe: no such file or directory
+1641232656535147241 [Debug] Unable to access /proc/24/exe: readlink /proc/24/exe: no such file or directory
+1641232656535300355 [Debug] Unable to access /proc/25/exe: readlink /proc/25/exe: no such file or directory
+1641232656535476171 [Debug] Unable to access /proc/26/exe: readlink /proc/26/exe: no such file or directory
+1641232656535619784 [Debug] Unable to access /proc/27/exe: readlink /proc/27/exe: no such file or directory
+1641232656535789600 [Debug] Unable to access /proc/28/exe: readlink /proc/28/exe: no such file or directory
+1641232656535938214 [Debug] Unable to access /proc/29/exe: readlink /proc/29/exe: no such file or directory
+1641232656536661079 [Debug] Unable to access /proc/30/exe: readlink /proc/30/exe: no such file or directory
+1641232656536811993 [Debug] Unable to access /proc/76/exe: readlink /proc/76/exe: no such file or directory
+1641232656536953906 [Debug] Unable to access /proc/77/exe: readlink /proc/77/exe: no such file or directory
+1641232656537092219 [Debug] Unable to access /proc/78/exe: readlink /proc/78/exe: no such file or directory
+1641232656537234032 [Debug] Unable to access /proc/79/exe: readlink /proc/79/exe: no such file or directory
+1641232656537373244 [Debug] Unable to access /proc/80/exe: readlink /proc/80/exe: no such file or directory
+1641232656537548960 [Debug] Unable to access /proc/81/exe: readlink /proc/81/exe: no such file or directory
+1641232656537698674 [Debug] Unable to access /proc/82/exe: readlink /proc/82/exe: no such file or directory
+1641232656537840487 [Debug] Unable to access /proc/83/exe: readlink /proc/83/exe: no such file or directory
+1641232656537971999 [Debug] Unable to access /proc/84/exe: readlink /proc/84/exe: no such file or directory
+1641232656538097610 [Debug] Unable to access /proc/85/exe: readlink /proc/85/exe: no such file or directory
+1641232656538220422 [Debug] Unable to access /proc/86/exe: readlink /proc/86/exe: no such file or directory
+1641232656538345833 [Debug] Unable to access /proc/88/exe: readlink /proc/88/exe: no such file or directory
+1641232656538468344 [Debug] Unable to access /proc/89/exe: readlink /proc/89/exe: no such file or directory
+1641232656538592156 [Debug] Unable to access /proc/90/exe: readlink /proc/90/exe: no such file or directory
+1641232656538756271 [Debug] Unable to access /proc/92/exe: readlink /proc/92/exe: no such file or directory
+1641232656538899484 [Debug] Unable to access /proc/93/exe: readlink /proc/93/exe: no such file or directory
+1641232656539040896 [Debug] Unable to access /proc/95/exe: readlink /proc/95/exe: no such file or directory
+1641232656539181609 [Debug] Unable to access /proc/96/exe: readlink /proc/96/exe: no such file or directory
+1641232656539320822 [Debug] Unable to access /proc/97/exe: readlink /proc/97/exe: no such file or directory
+1641232656539466535 [Debug] Unable to access /proc/98/exe: readlink /proc/98/exe: no such file or directory
+1641232656539768763 [Debug] Unable to access /proc/99/exe: readlink /proc/99/exe: no such file or directory
+1641232656539927977 [Debug] Unable to access /proc/101/exe: readlink /proc/101/exe: no such file or directory
+1641232656540054389 [Debug] Unable to access /proc/102/exe: readlink /proc/102/exe: no such file or directory
+1641232656540183701 [Debug] Unable to access /proc/103/exe: readlink /proc/103/exe: no such file or directory
+1641232656540316213 [Debug] Unable to access /proc/105/exe: readlink /proc/105/exe: no such file or directory
+1641232656540440024 [Debug] Unable to access /proc/106/exe: readlink /proc/106/exe: no such file or directory
+1641232656540578737 [Debug] Unable to access /proc/108/exe: readlink /proc/108/exe: no such file or directory
+1641232656540705848 [Debug] Unable to access /proc/109/exe: readlink /proc/109/exe: no such file or directory
+1641232656540830960 [Debug] Unable to access /proc/110/exe: readlink /proc/110/exe: no such file or directory
+1641232656540958471 [Debug] Unable to access /proc/111/exe: readlink /proc/111/exe: no such file or directory
+1641232656541094684 [Debug] Unable to access /proc/112/exe: readlink /proc/112/exe: no such file or directory
+1641232656541238797 [Debug] Unable to access /proc/113/exe: readlink /proc/113/exe: no such file or directory
+1641232656541378810 [Debug] Unable to access /proc/114/exe: readlink /proc/114/exe: no such file or directory
+1641232656541521223 [Debug] Unable to access /proc/115/exe: readlink /proc/115/exe: no such file or directory
+1641232656541662336 [Debug] Unable to access /proc/116/exe: readlink /proc/116/exe: no such file or directory
+1641232656541827451 [Debug] Unable to access /proc/117/exe: readlink /proc/117/exe: no such file or directory
+1641232656541976564 [Debug] Unable to access /proc/118/exe: readlink /proc/118/exe: no such file or directory
+1641232656542124578 [Debug] Unable to access /proc/119/exe: readlink /proc/119/exe: no such file or directory
+1641232656542272791 [Debug] Unable to access /proc/123/exe: readlink /proc/123/exe: no such file or directory
+1641232656542426305 [Debug] Unable to access /proc/124/exe: readlink /proc/124/exe: no such file or directory
+1641232656542580419 [Debug] Unable to access /proc/125/exe: readlink /proc/125/exe: no such file or directory
+1641232656542742634 [Debug] Unable to access /proc/134/exe: readlink /proc/134/exe: no such file or directory
+1641232656542908549 [Debug] Unable to access /proc/137/exe: readlink /proc/137/exe: no such file or directory
+1641232656543048862 [Debug] Unable to access /proc/138/exe: readlink /proc/138/exe: no such file or directory
+1641232656543186975 [Debug] Unable to access /proc/143/exe: readlink /proc/143/exe: no such file or directory
+1641232656543334288 [Debug] Unable to access /proc/144/exe: readlink /proc/144/exe: no such file or directory
+1641232656543878738 [Debug] Unable to access /proc/246/exe: readlink /proc/246/exe: no such file or directory
+1641232656544039252 [Debug] Unable to access /proc/252/exe: readlink /proc/252/exe: no such file or directory
+1641232656544448090 [Debug] Unable to access /proc/387/exe: readlink /proc/387/exe: no such file or directory
+1641232656544586002 [Debug] Unable to access /proc/388/exe: readlink /proc/388/exe: no such file or directory
+1641232656544723515 [Debug] Unable to access /proc/389/exe: readlink /proc/389/exe: no such file or directory
+1641232656544858627 [Debug] Unable to access /proc/390/exe: readlink /proc/390/exe: no such file or directory
+1641232656545128152 [Debug] Unable to access /proc/401/exe: readlink /proc/401/exe: no such file or directory
+1641232656545265264 [Debug] Unable to access /proc/404/exe: readlink /proc/404/exe: no such file or directory
+1641232656545401277 [Debug] Unable to access /proc/407/exe: readlink /proc/407/exe: no such file or directory
+1641232656545818215 [Debug] Unable to access /proc/525/exe: readlink /proc/525/exe: no such file or directory
+1641232656546106741 [Debug] Unable to access /proc/597/exe: readlink /proc/597/exe: no such file or directory
+1641232656546247054 [Debug] Unable to access /proc/598/exe: readlink /proc/598/exe: no such file or directory
+1641232656549712170 [Debug] Unable to access /proc/698/exe: readlink /proc/698/exe: no such file or directory
+1641232656552307707 [Debug] Unable to access /proc/1893/exe: readlink /proc/1893/exe: no such file or directory
+1641232656552491423 [Debug] Unable to access /proc/1991/exe: readlink /proc/1991/exe: no such file or directory
+1641232656553011771 [Debug] Unable to access /proc/2208/exe: readlink /proc/2208/exe: no such file or directory
+1641232656553499015 [Debug] Unable to access /proc/3455/exe: readlink /proc/3455/exe: no such file or directory
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.2",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker/daemon.json",
+    "file.group": "root",
+    "file.path": "/etc/docker/daemon.json",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-2.3: Running check: cis-docker-1.2.0-2.3: [CIS Docker] Ensure Docker is allowed to make changes to iptables [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.3",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker/daemon.json",
+    "file.group": "root",
+    "file.path": "/etc/docker/daemon.json",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-2.4: Running check: cis-docker-1.2.0-2.4: [CIS Docker] Ensure insecure registries are not used [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.4",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {}
+}
+INFO | cis-docker-1.2.0-2.5: Running check: cis-docker-1.2.0-2.5: [CIS Docker] Ensure aufs storage driver is not used [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.5",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {}
+}
+INFO | cis-docker-1.2.0-2.6: Running check: cis-docker-1.2.0-2.6: [CIS Docker] Ensure TLS authentication for Docker daemon is configured [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+  "agent_rule_id": "cis-docker-1.2.0-2.6",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker/daemon.json",
+    "file.group": "root",
+    "file.path": "/etc/docker/daemon.json",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.1: Running check: cis-docker-1.2.0-3.1: [CIS Docker] Ensure that the docker.service file ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.service
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/usr/lib/systemd/system/docker.service",
+    "file.group": "root",
+    "file.path": "/usr/lib/systemd/system/docker.service",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.2: Running check: cis-docker-1.2.0-3.2: [CIS Docker] Ensure that docker.service file permissions are appropriately set [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.service
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.2",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/usr/lib/systemd/system/docker.service",
+    "file.group": "root",
+    "file.path": "/usr/lib/systemd/system/docker.service",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.3: Running check: cis-docker-1.2.0-3.3: [CIS Docker] Ensure that docker.socket file ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.socket
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.3",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/usr/lib/systemd/system/docker.socket",
+    "file.group": "root",
+    "file.path": "/usr/lib/systemd/system/docker.socket",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.4: Running check: cis-docker-1.2.0-3.4: [CIS Docker] Ensure that docker.socket file permissions are set to 644 or more restrictive [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.socket
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.4",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/usr/lib/systemd/system/docker.socket",
+    "file.group": "root",
+    "file.path": "/usr/lib/systemd/system/docker.socket",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.5: Running check: cis-docker-1.2.0-3.5: [CIS Docker] Ensure that the /etc/docker directory ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.5",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker",
+    "file.group": "root",
+    "file.path": "/etc/docker",
+    "file.permissions": 493,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.6: Running check: cis-docker-1.2.0-3.6: [CIS Docker] Ensure that /etc/docker directory permissions are set to 755 or more restrictively [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.6",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker",
+    "file.group": "root",
+    "file.path": "/etc/docker",
+    "file.permissions": 493,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.7: Running check: cis-docker-1.2.0-3.7: [CIS Docker] Ensure that registry certificate file ownership is set to root:root [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.7",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "no files found for file check \"/etc/docker/certs.d/*.crt\""
+  }
+}
+ERROR | cis-docker-1.2.0-3.7: Check failed: no files found for file check "/etc/docker/certs.d/*.crt"
+INFO | cis-docker-1.2.0-3.8: Running check: cis-docker-1.2.0-3.8: [CIS Docker] Ensure that registry certificate file permissions are set to 444 or more restrictively [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.8",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "no files found for file check \"/etc/docker/certs.d/*.crt\""
+  }
+}
+ERROR | cis-docker-1.2.0-3.8: Check failed: no files found for file check "/etc/docker/certs.d/*.crt"
+INFO | cis-docker-1.2.0-3.9: Running check: cis-docker-1.2.0-3.9: [CIS Docker] Ensure that TLS CA certificate file ownership is set to root:root [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.9",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscacert\")"
+  }
+}
+ERROR | cis-docker-1.2.0-3.9: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscacert")
+INFO | cis-docker-1.2.0-3.10: Running check: cis-docker-1.2.0-3.10: [CIS Docker] Ensure that TLS CA certificate file permissions are set to 444 or more restrictively [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.10",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscacert\")"
+  }
+}
+ERROR | cis-docker-1.2.0-3.10: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscacert")
+INFO | cis-docker-1.2.0-3.11: Running check: cis-docker-1.2.0-3.11: [CIS Docker] Ensure that Docker server certificate file ownership is set to root:root [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.11",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscert\")"
+  }
+}
+ERROR | cis-docker-1.2.0-3.11: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscert")
+INFO | cis-docker-1.2.0-3.12: Running check: cis-docker-1.2.0-3.12: [CIS Docker] Ensure that the Docker server certificate file permissions are set to 444 or more restrictively [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.12",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscert\")"
+  }
+}
+ERROR | cis-docker-1.2.0-3.12: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscert")
+INFO | cis-docker-1.2.0-3.13: Running check: cis-docker-1.2.0-3.13: [CIS Docker] Ensure that the Docker server certificate key file ownership is set to root:root [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.13",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlskey\")"
+  }
+}
+ERROR | cis-docker-1.2.0-3.13: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlskey")
+INFO | cis-docker-1.2.0-3.14: Running check: cis-docker-1.2.0-3.14: [CIS Docker] Ensure that the Docker server certificate key file permissions are set to 400 [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.14",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlskey\")"
+  }
+}
+ERROR | cis-docker-1.2.0-3.14: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlskey")
+INFO | cis-docker-1.2.0-3.15: Running check: cis-docker-1.2.0-3.15: [CIS Docker] Ensure that the Docker socket file ownership is set to root:docker [version=1.2.0]
+WARN | Unable to return original path for: /var/run/docker.sock
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.15",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/var/run/docker.sock",
+    "file.group": "docker",
+    "file.path": "/var/run/docker.sock",
+    "file.permissions": 432,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.16: Running check: cis-docker-1.2.0-3.16: [CIS Docker] Ensure that the Docker socket file permissions are set to 660 or more restrictively [version=1.2.0]
+WARN | Unable to return original path for: /var/run/docker.sock
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.16",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/var/run/docker.sock",
+    "file.group": "docker",
+    "file.path": "/var/run/docker.sock",
+    "file.permissions": 432,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.17: Running check: cis-docker-1.2.0-3.17: [CIS Docker] Ensure that the daemon.json file ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.17",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker/daemon.json",
+    "file.group": "root",
+    "file.path": "/etc/docker/daemon.json",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.18: Running check: cis-docker-1.2.0-3.18: [CIS Docker] Ensure that daemon.json file permissions are set to 644 or more restrictive [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.18",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "passed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "file.glob": "/etc/docker/daemon.json",
+    "file.group": "root",
+    "file.path": "/etc/docker/daemon.json",
+    "file.permissions": 420,
+    "file.user": "root"
+  }
+}
+INFO | cis-docker-1.2.0-3.19: Running check: cis-docker-1.2.0-3.19: [CIS Docker] Ensure that the /etc/default/docker file ownership is set to root:root [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.19",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "no files found for file check \"/etc/default/docker\""
+  }
+}
+ERROR | cis-docker-1.2.0-3.19: Check failed: no files found for file check "/etc/default/docker"
+INFO | cis-docker-1.2.0-3.20: Running check: cis-docker-1.2.0-3.20: [CIS Docker] Ensure that the /etc/sysconfig/docker file ownership is set to root:root [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.20",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "no files found for file check \"/etc/sysconfig/docker\""
+  }
+}
+ERROR | cis-docker-1.2.0-3.20: Check failed: no files found for file check "/etc/sysconfig/docker"
+INFO | cis-docker-1.2.0-3.21: Running check: cis-docker-1.2.0-3.21: [CIS Docker] Ensure that the /etc/sysconfig/docker file permissions are set to 644 or more restrictively [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.21",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "no files found for file check \"/etc/sysconfig/docker\""
+  }
+}
+ERROR | cis-docker-1.2.0-3.21: Check failed: no files found for file check "/etc/sysconfig/docker"
+INFO | cis-docker-1.2.0-3.22: Running check: cis-docker-1.2.0-3.22: [CIS Docker] Ensure that the /etc/default/docker file permissions are set to 644 or more restrictively [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-3.22",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "error",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": {
+    "error": "no files found for file check \"/etc/default/docker\""
+  }
+}
+ERROR | cis-docker-1.2.0-3.22: Check failed: no files found for file check "/etc/default/docker"
+INFO | cis-docker-1.2.0-4.1: Running check: cis-docker-1.2.0-4.1: [CIS Docker] Ensure that a user for the container has been created [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-4.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-4.6: Running check: cis-docker-1.2.0-4.6: [CIS Docker] Ensure that HEALTHCHECK instructions have been added to container images [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-4.6",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.1: Running check: cis-docker-1.2.0-5.1: [CIS Docker] Ensure that, if applicable, an AppArmor Profile is enabled [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.1",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.2: Running check: cis-docker-1.2.0-5.2: [CIS Docker] Ensure that, if applicable, SELinux security options are set [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.2",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.3: Running check: cis-docker-1.2.0-5.3: [CIS Docker] Ensure that Linux kernel capabilities are restricted within containers [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.3",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.4: Running check: cis-docker-1.2.0-5.4: [CIS Docker] Ensure that privileged containers are not used [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.4",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.5: Running check: cis-docker-1.2.0-5.5: [CIS Docker] Ensure sensitive host system directories are not mounted on containers [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.5",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.7: Running check: cis-docker-1.2.0-5.7: [CIS Docker] Ensure privileged ports are not mapped within containers [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.7",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.9: Running check: cis-docker-1.2.0-5.9: [CIS Docker] Ensure that the host's network namespace is not shared [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.9",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.10: Running check: cis-docker-1.2.0-5.10: [CIS Docker] Ensure that the memory usage for containers is limited [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.10",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.11: Running check: cis-docker-1.2.0-5.11: [CIS Docker] Ensure that CPU priority is set appropriately on containers [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.11",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.12: Running check: cis-docker-1.2.0-5.12: [CIS Docker] Ensure that the container's root filesystem is mounted as read only [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.12",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.14: Running check: cis-docker-1.2.0-5.14: [CIS Docker] Ensure that the 'on-failure' container restart policy is set to '5' [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.14",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.15: Running check: cis-docker-1.2.0-5.15: [CIS Docker] Ensure that the host's process namespace is not shared [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.15",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.16: Running check: cis-docker-1.2.0-5.16: [CIS Docker] Ensure that the host's IPC namespace is not shared [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.16",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.20: Running check: cis-docker-1.2.0-5.20: [CIS Docker] Ensure that the host's UTS namespace is not shared [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.20",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.21: Running check: cis-docker-1.2.0-5.21: [CIS Docker] Ensure the default seccomp profile is not Disabled [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.21",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.24: Running check: cis-docker-1.2.0-5.24: [CIS Docker] Ensure that cgroup usage is confirmed [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.24",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.25: Running check: cis-docker-1.2.0-5.25: [CIS Docker] Ensure that the container is restricted from acquiring additional privileges [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.25",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.26: Running check: cis-docker-1.2.0-5.26: [CIS Docker] Ensure that container health is checked at runtime [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.26",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.28: Running check: cis-docker-1.2.0-5.28: [CIS Docker] Ensure that the PIDs cgroup limit is used [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.28",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.30: Running check: cis-docker-1.2.0-5.30: [CIS Docker] Ensure that the host's user namespaces are not shared [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.30",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}
+INFO | cis-docker-1.2.0-5.31: Running check: cis-docker-1.2.0-5.31: [CIS Docker] Ensure that the Docker socket is not mounted inside any containers [version=1.2.0]
+{
+  "agent_rule_id": "cis-docker-1.2.0-5.31",
+  "agent_framework_id": "cis-docker",
+  "agent_version": "7.32.4",
+  "result": "failed",
+  "resource_type": "docker_daemon",
+  "resource_id": "fv-az183-229_daemon",
+  "tags": null,
+  "data": null
+}

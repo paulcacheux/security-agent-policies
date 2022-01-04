@@ -1,0 +1,900 @@
+INFO | Features detected from environment: docker,containerd
+WARN | DEPRECATION NOTICE: The agent resolved your hostname as 'fv-az208-502'. However in a future version, it will be resolved as 'fv-az208-502.kmgg0fu2myoezeajip4j0sfi3d.cx.internal.cloudapp.net' by default. To enable the future behavior, please enable the `hostname_fqdn` flag in the configuration. For more information: https://dtdg.co/flag-hostname-fqdn
+INFO | Host root filesystem will be remapped to 
+INFO | Loading compliance rules from /home/runner/work/security-agent-policies/security-agent-policies/tests/compliance/containers/cis-docker-1.2.0.yaml
+INFO | CIS Docker Generic/1.2.0: loading suite from /home/runner/work/security-agent-policies/security-agent-policies/tests/compliance/containers/cis-docker-1.2.0.yaml
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.1: Running check: cis-docker-1.2.0-1.2.1: A separate partition for containers has been created [version=1.2.0]
+WARN | Unable to return original path for: /proc/mounts
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.1",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/proc/mounts",
+		"file.permissions": 292,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:35Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.2: Running check: cis-docker-1.2.0-1.2.2: Only trusted users are allowed to control Docker daemon [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.2",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"group.id": 121,
+		"group.name": "docker",
+		"group.users": [
+			""
+		]
+	},
+	"expire_at": "2022-01-03T18:57:35Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.3: Running check: cis-docker-1.2.0-1.2.3: Auditing is configured for the Docker daemon [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.3",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"audit.enabled": true,
+		"audit.path": "/usr/bin/dockerd",
+		"audit.permissions": "wa"
+	},
+	"expire_at": "2022-01-03T18:57:35Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.4: Running check: cis-docker-1.2.0-1.2.4: /var/lib/docker auditing is configured [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.4",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"audit.enabled": true,
+		"audit.path": "/var/lib/docker",
+		"audit.permissions": "wa"
+	},
+	"expire_at": "2022-01-03T18:57:35Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.5: Running check: cis-docker-1.2.0-1.2.5: /etc/docker auditing is configured [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.5",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"audit.enabled": true,
+		"audit.path": "/etc/docker",
+		"audit.permissions": "wa"
+	},
+	"expire_at": "2022-01-03T18:57:35Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.6: Running check: cis-docker-1.2.0-1.2.6: docker.service auditing is configured [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.6",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:35Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.7: Running check: cis-docker-1.2.0-1.2.7: docker.socket auditing is configured [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.7",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.8: Running check: cis-docker-1.2.0-1.2.8: /etc/default/docker auditing is configured [version=1.2.0]
+WARN | failed to resolve input: cis-docker-1.2.0-1.2.8: audit resource path does not exist
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.8",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "cis-docker-1.2.0-1.2.8: audit resource path does not exist"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-1.2.8: Check failed: cis-docker-1.2.0-1.2.8: audit resource path does not exist
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.9: Running check: cis-docker-1.2.0-1.2.9: /etc/sysconfig/docker auditing is configured [version=1.2.0]
+WARN | failed to resolve input: cis-docker-1.2.0-1.2.9: audit resource path does not exist
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.9",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "cis-docker-1.2.0-1.2.9: audit resource path does not exist"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-1.2.9: Check failed: cis-docker-1.2.0-1.2.9: audit resource path does not exist
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.10: Running check: cis-docker-1.2.0-1.2.10: /etc/docker/daemon.json auditing is configured [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.10",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"audit.enabled": true,
+		"audit.path": "/etc/docker/daemon.json",
+		"audit.permissions": "wa"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.11: Running check: cis-docker-1.2.0-1.2.11: /usr/bin/containerd auditing is configured [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.11",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"audit.enabled": true,
+		"audit.path": "/usr/bin/containerd",
+		"audit.permissions": "wa"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-1.2.12: Running check: cis-docker-1.2.0-1.2.12: /usr/sbin/runc auditing is configured [version=1.2.0]
+WARN | failed to resolve input: cis-docker-1.2.0-1.2.12: audit resource path does not exist
+{
+	"agent_rule_id": "cis-docker-1.2.0-1.2.12",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "cis-docker-1.2.0-1.2.12: audit resource path does not exist"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-1.2.12: Check failed: cis-docker-1.2.0-1.2.12: audit resource path does not exist
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-2.1: Running check: cis-docker-1.2.0-2.1: Network traffic is restricted between containers on the default bridge [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.1",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_network",
+	"resource_id": "fv-az208-502_43c2701c3f81e1ebd744e9b1985f47952d311f7c059e5902e9a268af94ae340d",
+	"tags": null,
+	"data": {
+		"network.name": "none"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.1",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_network",
+	"resource_id": "fv-az208-502_f72371eda00bb2ff2313f62018bcfb426dd87675fd38666a317e63dee576c4cb",
+	"tags": null,
+	"data": {
+		"network.name": "host"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.1",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_network",
+	"resource_id": "fv-az208-502_05fc0bd5c5f9e5ab8a9489ba4117eb93319b4b52ccd61492105ce66affd2e85f",
+	"tags": null,
+	"data": {
+		"network.name": "bridge"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-2.2: Running check: cis-docker-1.2.0-2.2: Logging level is set to 'info' [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+1641232656212551488 [Debug] Unable to access /proc/2/exe: readlink /proc/2/exe: no such file or directory
+1641232656212678990 [Debug] Unable to access /proc/3/exe: readlink /proc/3/exe: no such file or directory
+1641232656212797491 [Debug] Unable to access /proc/4/exe: readlink /proc/4/exe: no such file or directory
+1641232656212906693 [Debug] Unable to access /proc/6/exe: readlink /proc/6/exe: no such file or directory
+1641232656213019694 [Debug] Unable to access /proc/7/exe: readlink /proc/7/exe: no such file or directory
+1641232656213129996 [Debug] Unable to access /proc/9/exe: readlink /proc/9/exe: no such file or directory
+1641232656213239697 [Debug] Unable to access /proc/10/exe: readlink /proc/10/exe: no such file or directory
+1641232656213411200 [Debug] Unable to access /proc/11/exe: readlink /proc/11/exe: no such file or directory
+1641232656213519301 [Debug] Unable to access /proc/12/exe: readlink /proc/12/exe: no such file or directory
+1641232656213622003 [Debug] Unable to access /proc/13/exe: readlink /proc/13/exe: no such file or directory
+1641232656213729504 [Debug] Unable to access /proc/14/exe: readlink /proc/14/exe: no such file or directory
+1641232656213872006 [Debug] Unable to access /proc/15/exe: readlink /proc/15/exe: no such file or directory
+1641232656213975108 [Debug] Unable to access /proc/16/exe: readlink /proc/16/exe: no such file or directory
+1641232656214083209 [Debug] Unable to access /proc/17/exe: readlink /proc/17/exe: no such file or directory
+1641232656214191310 [Debug] Unable to access /proc/18/exe: readlink /proc/18/exe: no such file or directory
+1641232656214298512 [Debug] Unable to access /proc/19/exe: readlink /proc/19/exe: no such file or directory
+1641232656214401213 [Debug] Unable to access /proc/20/exe: readlink /proc/20/exe: no such file or directory
+1641232656214546415 [Debug] Unable to access /proc/21/exe: readlink /proc/21/exe: no such file or directory
+1641232656214653017 [Debug] Unable to access /proc/22/exe: readlink /proc/22/exe: no such file or directory
+1641232656214761418 [Debug] Unable to access /proc/23/exe: readlink /proc/23/exe: no such file or directory
+1641232656214891720 [Debug] Unable to access /proc/24/exe: readlink /proc/24/exe: no such file or directory
+1641232656215000322 [Debug] Unable to access /proc/25/exe: readlink /proc/25/exe: no such file or directory
+1641232656215105523 [Debug] Unable to access /proc/26/exe: readlink /proc/26/exe: no such file or directory
+1641232656215215524 [Debug] Unable to access /proc/27/exe: readlink /proc/27/exe: no such file or directory
+1641232656215323326 [Debug] Unable to access /proc/28/exe: readlink /proc/28/exe: no such file or directory
+1641232656215428627 [Debug] Unable to access /proc/29/exe: readlink /proc/29/exe: no such file or directory
+1641232656215534429 [Debug] Unable to access /proc/30/exe: readlink /proc/30/exe: no such file or directory
+1641232656215645130 [Debug] Unable to access /proc/76/exe: readlink /proc/76/exe: no such file or directory
+1641232656215748232 [Debug] Unable to access /proc/77/exe: readlink /proc/77/exe: no such file or directory
+1641232656215859633 [Debug] Unable to access /proc/78/exe: readlink /proc/78/exe: no such file or directory
+1641232656215965735 [Debug] Unable to access /proc/79/exe: readlink /proc/79/exe: no such file or directory
+1641232656216071336 [Debug] Unable to access /proc/80/exe: readlink /proc/80/exe: no such file or directory
+1641232656216180738 [Debug] Unable to access /proc/81/exe: readlink /proc/81/exe: no such file or directory
+1641232656216288639 [Debug] Unable to access /proc/82/exe: readlink /proc/82/exe: no such file or directory
+1641232656216394441 [Debug] Unable to access /proc/83/exe: readlink /proc/83/exe: no such file or directory
+1641232656216505342 [Debug] Unable to access /proc/84/exe: readlink /proc/84/exe: no such file or directory
+1641232656216612543 [Debug] Unable to access /proc/85/exe: readlink /proc/85/exe: no such file or directory
+1641232656216718145 [Debug] Unable to access /proc/86/exe: readlink /proc/86/exe: no such file or directory
+1641232656216822746 [Debug] Unable to access /proc/88/exe: readlink /proc/88/exe: no such file or directory
+1641232656216935748 [Debug] Unable to access /proc/89/exe: readlink /proc/89/exe: no such file or directory
+1641232656217050649 [Debug] Unable to access /proc/90/exe: readlink /proc/90/exe: no such file or directory
+1641232656217282353 [Debug] Unable to access /proc/92/exe: readlink /proc/92/exe: no such file or directory
+1641232656217440155 [Debug] Unable to access /proc/93/exe: readlink /proc/93/exe: no such file or directory
+1641232656217579557 [Debug] Unable to access /proc/95/exe: readlink /proc/95/exe: no such file or directory
+1641232656217695258 [Debug] Unable to access /proc/96/exe: readlink /proc/96/exe: no such file or directory
+1641232656217805060 [Debug] Unable to access /proc/97/exe: readlink /proc/97/exe: no such file or directory
+1641232656217914761 [Debug] Unable to access /proc/98/exe: readlink /proc/98/exe: no such file or directory
+1641232656218042263 [Debug] Unable to access /proc/99/exe: readlink /proc/99/exe: no such file or directory
+1641232656218147364 [Debug] Unable to access /proc/100/exe: readlink /proc/100/exe: no such file or directory
+1641232656218259366 [Debug] Unable to access /proc/101/exe: readlink /proc/101/exe: no such file or directory
+1641232656218366167 [Debug] Unable to access /proc/103/exe: readlink /proc/103/exe: no such file or directory
+1641232656218502069 [Debug] Unable to access /proc/104/exe: readlink /proc/104/exe: no such file or directory
+1641232656218612871 [Debug] Unable to access /proc/105/exe: readlink /proc/105/exe: no such file or directory
+1641232656218730172 [Debug] Unable to access /proc/106/exe: readlink /proc/106/exe: no such file or directory
+1641232656218834574 [Debug] Unable to access /proc/107/exe: readlink /proc/107/exe: no such file or directory
+1641232656218939775 [Debug] Unable to access /proc/108/exe: readlink /proc/108/exe: no such file or directory
+1641232656219053777 [Debug] Unable to access /proc/109/exe: readlink /proc/109/exe: no such file or directory
+1641232656219160278 [Debug] Unable to access /proc/110/exe: readlink /proc/110/exe: no such file or directory
+1641232656219262480 [Debug] Unable to access /proc/111/exe: readlink /proc/111/exe: no such file or directory
+1641232656219371881 [Debug] Unable to access /proc/112/exe: readlink /proc/112/exe: no such file or directory
+1641232656219478683 [Debug] Unable to access /proc/113/exe: readlink /proc/113/exe: no such file or directory
+1641232656219584284 [Debug] Unable to access /proc/114/exe: readlink /proc/114/exe: no such file or directory
+1641232656219684785 [Debug] Unable to access /proc/115/exe: readlink /proc/115/exe: no such file or directory
+1641232656219789687 [Debug] Unable to access /proc/116/exe: readlink /proc/116/exe: no such file or directory
+1641232656219892288 [Debug] Unable to access /proc/118/exe: readlink /proc/118/exe: no such file or directory
+1641232656220004490 [Debug] Unable to access /proc/119/exe: readlink /proc/119/exe: no such file or directory
+1641232656220109091 [Debug] Unable to access /proc/121/exe: readlink /proc/121/exe: no such file or directory
+1641232656220213593 [Debug] Unable to access /proc/122/exe: readlink /proc/122/exe: no such file or directory
+1641232656220320294 [Debug] Unable to access /proc/124/exe: readlink /proc/124/exe: no such file or directory
+1641232656220428396 [Debug] Unable to access /proc/133/exe: readlink /proc/133/exe: no such file or directory
+1641232656220530697 [Debug] Unable to access /proc/136/exe: readlink /proc/136/exe: no such file or directory
+1641232656220635498 [Debug] Unable to access /proc/137/exe: readlink /proc/137/exe: no such file or directory
+1641232656220750000 [Debug] Unable to access /proc/142/exe: readlink /proc/142/exe: no such file or directory
+1641232656220860801 [Debug] Unable to access /proc/143/exe: readlink /proc/143/exe: no such file or directory
+1641232656221263407 [Debug] Unable to access /proc/247/exe: readlink /proc/247/exe: no such file or directory
+1641232656221374108 [Debug] Unable to access /proc/251/exe: readlink /proc/251/exe: no such file or directory
+1641232656221726413 [Debug] Unable to access /proc/388/exe: readlink /proc/388/exe: no such file or directory
+1641232656221835415 [Debug] Unable to access /proc/389/exe: readlink /proc/389/exe: no such file or directory
+1641232656221941316 [Debug] Unable to access /proc/390/exe: readlink /proc/390/exe: no such file or directory
+1641232656222052418 [Debug] Unable to access /proc/391/exe: readlink /proc/391/exe: no such file or directory
+1641232656222289321 [Debug] Unable to access /proc/401/exe: readlink /proc/401/exe: no such file or directory
+1641232656222397322 [Debug] Unable to access /proc/407/exe: readlink /proc/407/exe: no such file or directory
+1641232656222521324 [Debug] Unable to access /proc/409/exe: readlink /proc/409/exe: no such file or directory
+1641232656223033831 [Debug] Unable to access /proc/599/exe: readlink /proc/599/exe: no such file or directory
+1641232656223145233 [Debug] Unable to access /proc/600/exe: readlink /proc/600/exe: no such file or directory
+1641232656226343776 [Debug] Unable to access /proc/710/exe: readlink /proc/710/exe: no such file or directory
+1641232656226787082 [Debug] Unable to access /proc/771/exe: readlink /proc/771/exe: no such file or directory
+1641232656228844910 [Debug] Unable to access /proc/1887/exe: readlink /proc/1887/exe: no such file or directory
+1641232656228972412 [Debug] Unable to access /proc/2021/exe: readlink /proc/2021/exe: no such file or directory
+1641232656229366317 [Debug] Unable to access /proc/2238/exe: readlink /proc/2238/exe: no such file or directory
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.2",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-2.3: Running check: cis-docker-1.2.0-2.3: Docker is allowed to make changes to iptables [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.3",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-2.4: Running check: cis-docker-1.2.0-2.4: Insecure registries are not used [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.4",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-2.5: Running check: cis-docker-1.2.0-2.5: aufs storage driver is not used [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.5",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-2.6: Running check: cis-docker-1.2.0-2.6: TLS authentication for Docker daemon is configured [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: 1:1: call to "process.flag()" failed: failed to find process: kubelet
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+	"agent_rule_id": "cis-docker-1.2.0-2.6",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "failed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.1: Running check: cis-docker-1.2.0-3.1: docker.service file ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.service
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.1",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/usr/lib/systemd/system/docker.service",
+		"file.permissions": 420,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.2: Running check: cis-docker-1.2.0-3.2: docker.service file permissions are appropriately set [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.service
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.2",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/usr/lib/systemd/system/docker.service",
+		"file.permissions": 420,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.3: Running check: cis-docker-1.2.0-3.3: docker.socket file ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.socket
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.3",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/usr/lib/systemd/system/docker.socket",
+		"file.permissions": 420,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.4: Running check: cis-docker-1.2.0-3.4: docker.socket file permissions are set to 644 or more restrictive [version=1.2.0]
+WARN | Unable to return original path for: /usr/lib/systemd/system/docker.socket
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.4",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/usr/lib/systemd/system/docker.socket",
+		"file.permissions": 420,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.5: Running check: cis-docker-1.2.0-3.5: /etc/docker directory ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker
+ERROR | error reading file: read /etc/docker: is a directory
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.5",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/etc/docker",
+		"file.permissions": 493,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.6: Running check: cis-docker-1.2.0-3.6: /etc/docker directory permissions are set to 755 or more restrictively [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker
+ERROR | error reading file: read /etc/docker: is a directory
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.6",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/etc/docker",
+		"file.permissions": 493,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.7: Running check: cis-docker-1.2.0-3.7: Registry certificate file ownership is set to root:root [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.7",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "no files found for file check \"/etc/docker/certs.d/*.crt\""
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.7: Check failed: no files found for file check "/etc/docker/certs.d/*.crt"
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.8: Running check: cis-docker-1.2.0-3.8: Registry certificate file permissions are set to 444 or more restrictively [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.8",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "no files found for file check \"/etc/docker/certs.d/*.crt\""
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.8: Check failed: no files found for file check "/etc/docker/certs.d/*.crt"
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.9: Running check: cis-docker-1.2.0-3.9: TLS CA certificate file ownership is set to root:root [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: empty path from process.flag("dockerd", "--tlscacert")
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.9",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscacert\")"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.9: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscacert")
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.10: Running check: cis-docker-1.2.0-3.10: TLS CA certificate file permissions are set to 444 or more restrictively [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: empty path from process.flag("dockerd", "--tlscacert")
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.10",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscacert\")"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.10: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscacert")
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.11: Running check: cis-docker-1.2.0-3.11: Docker server certificate file ownership is set to root:root [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: empty path from process.flag("dockerd", "--tlscert")
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.11",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscert\")"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.11: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscert")
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.12: Running check: cis-docker-1.2.0-3.12: Docker server certificate file permissions are set to 444 or more restrictively [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: empty path from process.flag("dockerd", "--tlscert")
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.12",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlscert\")"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.12: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlscert")
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.13: Running check: cis-docker-1.2.0-3.13: Docker server certificate key file ownership is set to root:root [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: empty path from process.flag("dockerd", "--tlskey")
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.13",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlskey\")"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.13: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlskey")
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.14: Running check: cis-docker-1.2.0-3.14: Docker server certificate key file permissions are set to 400 [version=1.2.0]
+WARN | failed to resolve input: failed to resolve path: empty path from process.flag("dockerd", "--tlskey")
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.14",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "failed to resolve path: empty path from process.flag(\"dockerd\", \"--tlskey\")"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.14: Check failed: failed to resolve path: empty path from process.flag("dockerd", "--tlskey")
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.15: Running check: cis-docker-1.2.0-3.15: Docker socket file ownership is set to root:docker [version=1.2.0]
+WARN | Unable to return original path for: /var/run/docker.sock
+ERROR | error reading file: open /var/run/docker.sock: no such device or address
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.15",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "docker",
+		"file.path": "/var/run/docker.sock",
+		"file.permissions": 432,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.16: Running check: cis-docker-1.2.0-3.16: Docker socket file permissions are set to 660 or more restrictively [version=1.2.0]
+WARN | Unable to return original path for: /var/run/docker.sock
+ERROR | error reading file: open /var/run/docker.sock: no such device or address
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.16",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "docker",
+		"file.path": "/var/run/docker.sock",
+		"file.permissions": 432,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.17: Running check: cis-docker-1.2.0-3.17: daemon.json file ownership is set to root:root [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.17",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/etc/docker/daemon.json",
+		"file.permissions": 420,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.18: Running check: cis-docker-1.2.0-3.18: daemon.json file permissions are set to 644 or more restrictive [version=1.2.0]
+WARN | Unable to return original path for: /etc/docker/daemon.json
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.18",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "passed",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"file.group": "root",
+		"file.path": "/etc/docker/daemon.json",
+		"file.permissions": 420,
+		"file.user": "root"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.19: Running check: cis-docker-1.2.0-3.19: /etc/default/docker file ownership is set to root:root [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.19",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "no files found for file check \"/etc/default/docker\""
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.19: Check failed: no files found for file check "/etc/default/docker"
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.20: Running check: cis-docker-1.2.0-3.20: /etc/sysconfig/docker file ownership is set to root:root [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.20",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "no files found for file check \"/etc/sysconfig/docker\""
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.20: Check failed: no files found for file check "/etc/sysconfig/docker"
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.21: Running check: cis-docker-1.2.0-3.21: /etc/sysconfig/docker file permissions are set to 644 or more restrictively [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.21",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "no files found for file check \"/etc/sysconfig/docker\""
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.21: Check failed: no files found for file check "/etc/sysconfig/docker"
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-3.22: Running check: cis-docker-1.2.0-3.22: /etc/default/docker file permissions are set to 644 or more restrictively [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-3.22",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_daemon",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "no files found for file check \"/etc/default/docker\""
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-3.22: Check failed: no files found for file check "/etc/default/docker"
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-4.1: Running check: cis-docker-1.2.0-4.1: A user for the container has been created [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-4.6: Running check: cis-docker-1.2.0-4.6: HEALTHCHECK instructions have been added to container images [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.1: Running check: cis-docker-1.2.0-5.1: An AppArmor Profile is enabled [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.2: Running check: cis-docker-1.2.0-5.2: SELinux security options are set [version=1.2.0]
+{
+	"agent_rule_id": "cis-docker-1.2.0-5.2",
+	"agent_framework_id": "cis-docker",
+	"agent_version": "7.33.0-rc.11",
+	"result": "error",
+	"resource_type": "docker_container",
+	"resource_id": "fv-az208-502_daemon",
+	"tags": null,
+	"data": {
+		"error": "selinux is disabled"
+	},
+	"expire_at": "2022-01-03T18:57:36Z",
+	"evaluator": "rego"
+}
+ERROR | cis-docker-1.2.0-5.2: Check failed: selinux is disabled
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.3: Running check: cis-docker-1.2.0-5.3: Linux kernel capabilities are restricted within containers [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.4: Running check: cis-docker-1.2.0-5.4: Privileged containers are not used [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.5: Running check: cis-docker-1.2.0-5.5: Sensitive host system directories are not mounted on containers [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.7: Running check: cis-docker-1.2.0-5.7: Privileged ports are not mapped within containers [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.9: Running check: cis-docker-1.2.0-5.9: Host's network namespace is not shared [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.10: Running check: cis-docker-1.2.0-5.10: Memory usage for containers is limited [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.11: Running check: cis-docker-1.2.0-5.11: CPU priority is set appropriately on containers [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.12: Running check: cis-docker-1.2.0-5.12: Container's root filesystem is mounted as read only [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.14: Running check: cis-docker-1.2.0-5.14: 'on-failure' container restart policy is set to '5' [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.15: Running check: cis-docker-1.2.0-5.15: Host's process namespace is not shared [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.16: Running check: cis-docker-1.2.0-5.16: Host's IPC namespace is not shared [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.20: Running check: cis-docker-1.2.0-5.20: Host's UTS namespace is not shared [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.21: Running check: cis-docker-1.2.0-5.21: Default seccomp profile is not Disabled [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.24: Running check: cis-docker-1.2.0-5.24: cgroup usage is confirmed [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.25: Running check: cis-docker-1.2.0-5.25: Container is restricted from acquiring additional privileges [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.26: Running check: cis-docker-1.2.0-5.26: Container health is checked at runtime [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.28: Running check: cis-docker-1.2.0-5.28: PIDs cgroup limit is used [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.30: Running check: cis-docker-1.2.0-5.30: Host's user namespaces are not shared [version=1.2.0]
+INFO | defaulting rego query to `data.datadog.findings`
+INFO | cis-docker-1.2.0-5.31: Running check: cis-docker-1.2.0-5.31: Docker socket is not mounted inside any containers [version=1.2.0]
