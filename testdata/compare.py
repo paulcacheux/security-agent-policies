@@ -1,5 +1,6 @@
 import sys
 import json
+from collections import defaultdict
 
 
 def read_result_file(argv_index: int):
@@ -26,42 +27,43 @@ def parse_result_content(content: str):
 
 
 def parse_results(argv_index: int):
-    return parse_result_content(read_result_file(argv_index))
+    findings = parse_result_content(read_result_file(argv_index))
+    res = defaultdict(list)
+    for finding in findings:
+        rule_id = finding["agent_rule_id"]
+        res[rule_id].append(finding)
+    return res
+
+
+def compare_simple_findings(a, b):
+    if b is None:
+        if a["data"] is None:
+            return "ok"
+        else:
+            return "missing finding"
+    if a["result"] == b["result"]:
+        return "ok"
+    return "different finding"
 
 
 def compare_findings(a, b):
-    if b is None:
-        return a["data"] is None
-    if a["result"] == b["result"]:
-        return True
-    return False
+    if len(a) == 1:
+        if b is None or len(b) == 0:
+            return "missing finding"
+        if len(b) == 1:
+            return compare_simple_findings(a[0], b[0])
+    else:
+        print(a)
+        print(b)
+        return "investigate"
 
 
 resa = parse_results(1)
 resb = parse_results(2)
-resb_dict = {}
-for f in resb:
-    rule_id = f["agent_rule_id"]
-    resb_dict[rule_id] = f
-    if rule_id == "cis-docker-1.2.0-2.1":
-        print(f)
 
-resb = {f["agent_rule_id"]: f for f in resb}
-
-true_counter = 0
-false_counter = 0
-for finding in resa:
-    rule_id = finding["agent_rule_id"]
-    if rule_id == "cis-docker-1.2.0-2.1":
-        print(finding)
+for rule_id, findings in resa.items():
+    if rule_id == "cis-docker-1.2.0-4.1":
+        print(findings)
+    # print(rule_id, len(findings))
     print(rule_id)
-    against = resb_dict.get(rule_id)
-    test = compare_findings(finding, against)
-    print(test)
-    if test:
-        true_counter += 1
-    else:
-        print(finding)
-        print(against)
-        false_counter += 1
-print(true_counter, false_counter)
+    print(compare_findings(findings, resb.get(rule_id)))
